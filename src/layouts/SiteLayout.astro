@@ -1,0 +1,19 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import '@fontsource/zen-dots';
+---
+
+<html lang="en">
+  <head>
+    <title>PCVision</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <Header></Header>
+    <article>
+      <slot />
+    </article>
+  </body>
+</html>

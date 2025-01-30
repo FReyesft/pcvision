@@ -1,0 +1,29 @@
+:root {
+  --bg-dark: #1A1B30;
+  --text-dark: #e7e7e7;
+  --text-light: #1A1B30;
+}
+
+html {
+  color: var(--text-dark);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  width: 100%;
+  line-height: 1.5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  margin-bottom: 16px;
+}

@@ -1,16 +1,135 @@
 ---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import pc1 from "../assets/images/modern-gaming-pc-isolated-on-transparent-free-png 2.png";
+import { Image } from "astro:assets";
 
+const products = [
+  {
+    id: 1,
+    name: "PC Gamer RTX 4090",
+    description: "Potencia extrema para los juegos más exigentes.",
+    image: pc1,
+  },
+  {
+    id: 2,
+    name: "Laptop Ultra Slim",
+    description: "Rendimiento y portabilidad en un diseño elegante.",
+    image: pc1,
+  },
+  {
+    id: 3,
+    name: "Teclado Mecánico RGB",
+    description: "Iluminación RGB y switches de alto rendimiento.",
+    image: pc1,
+  },
+  {
+    id: 4,
+    name: "Mouse Gamer Pro",
+    description: "Precisión y velocidad para jugadores competitivos.",
+    image: pc1,
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<SiteLayout title="Home Page">
+  <div id="home">
+    <div class="home-info">
+      <h1 class="title">PCVision</h1>
+      <p class="home-info_eslogan">
+        El poder de la tecnología al alcance de tus manos
+      </p>
+      <p>
+        Equipos de alto rendimiento, periféricos avanzados y soporte confiable.
+        Todo lo que necesitas para crear, jugar y triunfar está aquí. ¡Hazlo
+        posible con PCVision! alcance de tus manos.
+      </p>
+    </div>
+    <Image
+      class="home-pc-img"
+      src={pc1}
+      alt="PC Moderno"
+      width={500}
+      height={500}
+    />
+  </div>
+  <div id="products-section">
+    <div>
+      <h2 class="products-title">#1 En computadores y componentes</h2>
+      <h3 class="products-subtitle">Diseño / Animación / Ingeniería</h3>
+    </div>
+    <div class="products-container">
+      {
+        products.map((p) => (
+          <div class="product-card">
+            <div class="product-card_body">
+              <div class="product-img">
+                <Image src={p.image} alt={p.name} width={300} height={300} />
+              </div>
+              <div class="product-card_body_info">
+                <h4>{p.name}</h4>
+                <p>{p.description}</p>
+                <button>Más</button>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+  <style>
+    #home {
+      display: flex;
+      height: 100vh;
+      background: radial-gradient(circle at top right, #2c2d50, #1a1b30);
+      align-items: center;
+      justify-content: center;
+      padding: 50px 0 50px 0;
+    }
+    .home-info {
+      max-width: 550px;
+    }
+    .home-info_eslogan {
+      font-weight: 400;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+    .title {
+      width: fit-content;
+      display: inline-block;
+      font-size: 3.5rem;
+      color: var(--text-dark);
+      font-family: "Zen Dots", system-ui;
+    }
+    #products-section {
+      padding: 50px 100px 50px 100px;
+    }
+    .products-title {
+      text-align: center;
+      font-size: 1.5rem;
+      color: var(--text-light);
+    }
+    .products-subtitle {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--text-light);
+      margin-bottom: 18px;
+    }
+    .products-container {
+      display: flex;
+      gap: 18px;
+    }
+    .product-card {
+      width: 350px;
+      height: fit-content;
+      border-radius: 12px;
+      padding: 18px;
+      background: radial-gradient(circle at top right, #2c2d50, #1a1b30);
+    }
+    .product-img {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</SiteLayout>

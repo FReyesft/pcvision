@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/images/logo-dark.png";
+---
+
+<nav id="nav">
+  <Image src={logo} alt="logo NexaVision" width={50} height={50} />
+  <ul class="nav-items">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#products-section">Productos</a></li>
+    <li><a href="/">Opiniones</a></li>
+    <li><a href="/">Nosotros</a></li>
+  </ul>
+</nav>
+<style>
+  #nav {
+    position: fixed;
+    width: 100%;
+    background: radial-gradient(circle at top right, #2C2D50, #1A1B30);
+    padding: 16px 100px 16px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-items {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+    > li a {
+      color: var(--text-dark);
+       text-decoration: none;
+    }
+
+    > li a:hover {
+      text-decoration: underline;
+    }
+  }
+</style>
