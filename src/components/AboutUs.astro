@@ -1,0 +1,71 @@
+---
+import TechImage from '../assets/images/pexels-photo-735911.webp';
+import { Image } from 'astro:assets';
+---
+
+<div id="about-us">
+  <div class="about-us_container">
+    <Image class="about-us_image" src={TechImage} alt="image"></Image>
+    <p class="about-us_description">
+      En <span>PCVision</span>, conectamos a las personas con la tecnología que
+      <span>impulsa su vida</span>. <br />
+      Ofrecemos los mejores computadores, periféricos y soluciones de soporte
+      técnico para que tus equipos funcionen al máximo.<br />
+      Ya sea que necesites una laptop de última generación, accesorios
+      indispensables o un servicio técnico confiable, estamos aquí para hacer
+      que la tecnología sea simple, rápida y efectiva.
+      <span>¡Innovación y calidad a tu alcance!</span>
+    </p>
+  </div>
+</div>
+
+<style>
+  #about-us {
+    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url("../assets/images/pexels-photo-735911.webp");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-us_container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .about-us_image {
+    width: 320px;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .about-us_description {
+    font-size: 20px;
+    color: white;
+  }
+
+  .about-us_description span {
+    font-weight: 600;
+    color: #4df855;
+  }
+
+  @media (max-width: 768px) {
+    .about-us_container {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .about-us_image {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+</style>

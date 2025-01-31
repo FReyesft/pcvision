@@ -1,0 +1,165 @@
+---
+import Logo from "../assets/images/logo-dark.png";
+import { Image } from "astro:assets";
+import FacebookIcon from "../assets/svg/facebook.svg";
+import InstagramIcon from "../assets/svg/instagram.svg";
+import XIcon from "../assets/svg/x.svg";
+import LinkedInIcon from "../assets/svg/linkedin.svg";
+---
+
+<footer id="footer">
+  <div class="footer_container">
+    <div class="footer_logo">
+      <Image class="footer_image" src={Logo} alt="PCVision Logo" />
+    </div>
+
+    <div class="footer_links_social">
+      <div class="footer_links">
+        <h3>Enlaces Rápidos</h3>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Productos</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+
+      <div class="footer_social">
+        <h3>Síguenos</h3>
+        <div class="social_icons">
+          <a href="#" aria-label="Facebook"><Image src={FacebookIcon} alt="Facebook" /></a>
+          <a href="#" aria-label="Instagram"><Image src={InstagramIcon} alt="Instagram" /></a>
+          <a href="#" aria-label="X"><Image src={XIcon} alt="X" /></a>
+          <a href="#" aria-label="LinkedIn"><Image src={LinkedInIcon} alt="LinkedIn" /></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer_bottom">
+    <p>© 2024 PCVision. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<style>
+  #footer {
+    background: linear-gradient(135deg, #1a1b30, #2c2d50);
+    color: white;
+    padding: 50px 80px;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .footer_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    gap: 40px;
+  }
+
+  .footer_logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer_image {
+    width: 180px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .footer_links_social {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .footer_links h3,
+  .footer_social h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ffcc00;
+    padding-bottom: 8px;
+  }
+
+  .footer_links ul,
+  .footer_social {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer_links ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer_links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+
+  .footer_links li a:hover {
+    color: #ffcc00;
+  }
+
+  .social_icons {
+    display: flex;
+    gap: 20px;
+  }
+
+  .social_icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+
+  .social_icons a:hover {
+    background: #ffcc00;
+    transform: translateY(-5px);
+  }
+
+  .social_icons img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .footer_bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 14px;
+    opacity: 0.8;
+  }
+
+  @media (max-width: 768px) {
+    .footer_container {
+      flex-direction: column;
+      text-align: center;
+      gap: 40px;
+    }
+
+    .social_icons {
+      justify-content: center;
+    }
+
+    .footer_links_social {
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+</style>
