@@ -1,0 +1,64 @@
+---
+import TechIcon from "../assets/svg/tech-icon.svg";
+import pc1 from "../assets/images/modern-gaming-pc-isolated-on-transparent-free-png 2.png";
+import { Image } from "astro:assets";
+---
+
+<div id="home">
+  <TechIcon class="tech-icon left" />
+  <TechIcon class="tech-icon right" />
+  <div class="home-info">
+    <h1 class="title">PCVision</h1>
+    <p class="home-info_eslogan">
+      El poder de la tecnología al alcance de tus manos
+    </p>
+    <p>
+      Equipos de alto rendimiento, periféricos avanzados y soporte confiable.
+      Todo lo que necesitas para crear, jugar y triunfar está aquí. ¡Hazlo
+      posible con PCVision! alcance de tus manos.
+    </p>
+  </div>
+  <Image
+    class="home-pc-img"
+    src={pc1}
+    alt="PC Moderno"
+    width={500}
+    height={500}
+  />
+</div>
+<style>
+  #home {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    background: radial-gradient(circle at top right, #2c2d50, #1a1b30);
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0 50px 0;
+  }
+  .home-info {
+    max-width: 550px;
+  }
+  .home-info_eslogan {
+    font-weight: 400;
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  .title {
+    width: fit-content;
+    display: inline-block;
+    font-size: 3.5rem;
+    color: var(--text-dark);
+    font-family: "Zen Dots", system-ui;
+  }
+  .tech-icon.left {
+    position: absolute;
+    left: -30px;
+    top: 70px;
+  }
+  .tech-icon.right {
+    position: absolute;
+    right: -30px;
+    bottom: 50px;
+  }
+</style>
