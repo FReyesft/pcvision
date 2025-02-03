@@ -11,16 +11,22 @@ import LinkedInIcon from "../assets/svg/linkedin.svg";
   <div class="footer_container">
     <div class="footer_logo">
       <Image class="footer_image" src={Logo} alt="PCVision Logo" />
+      <div>
+        <h1 class="title">PCVision</h1>
+        <p class="home-info_eslogan">
+          El poder de la tecnología al alcance de tus manos
+        </p>
+      </div>
     </div>
 
     <div class="footer_links_social">
       <div class="footer_links">
         <h3>Enlaces Rápidos</h3>
         <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Productos</a></li>
-          <li><a href="#">Servicios</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#products-section">Productos</a></li>
+          <li><a href="#about-us">Servicios</a></li>
+          <li><a href="#footer">Contacto</a></li>
         </ul>
       </div>
 
@@ -61,9 +67,9 @@ import LinkedInIcon from "../assets/svg/linkedin.svg";
 
   .footer_logo {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 20px;
     align-items: center;
-    text-align: center;
   }
 
   .footer_image {
@@ -144,6 +150,14 @@ import LinkedInIcon from "../assets/svg/linkedin.svg";
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     font-size: 14px;
     opacity: 0.8;
+  }
+
+  .title {
+    width: fit-content;
+    display: inline-block;
+    font-size: 3.5rem;
+    color: var(--text-dark);
+    font-family: "Zen Dots", system-ui;
   }
 
   @media (max-width: 768px) {
