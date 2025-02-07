@@ -48,7 +48,7 @@ p {
   color: #ffffff;
   background: linear-gradient(90deg, #6a5acd, #8080e0);
   cursor: pointer;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -56,6 +56,8 @@ p {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
+  text-align: center;
+  text-decoration: none;
 }
 
 .primary-button:hover {

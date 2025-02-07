@@ -1,53 +1,7 @@
 ---
-import pc1 from "../assets/images/modern-gaming-pc-isolated-on-transparent-free-png 2.png";
-import laptop from "../assets/images/laptop.png";
-import teclado from "../assets/images/teclado.png";
-import mouse from "../assets/images/mouse.png";
-import mouseergo from "../assets/images/mouse-ergo.png";
-import pc2 from "../assets/images/pc2.png";
-
+import { products } from "./ProductsList.astro";
 import { Image } from "astro:assets";
 import "swiper/swiper-bundle.css";
-
-const products = [
-  {
-    id: 1,
-    name: "PC Gamer RTX 4090",
-    description: "Potencia extrema para los juegos más exigentes.",
-    image: pc1,
-  },
-  {
-    id: 2,
-    name: "Laptop Victum",
-    description: "Rendimiento y portabilidad en un diseño elegante.",
-    image: laptop,
-  },
-  {
-    id: 3,
-    name: "Teclado MINTAKA V50",
-    description: "Mecánico con iluminación RGB y switches de alto rendimiento.",
-    image: teclado,
-  },
-  {
-    id: 4,
-    name: "Mouse Gamer",
-    description:
-      "REDDRAGON Centrophus RGB de alta precición para juagadores competitivos.",
-    image: mouse,
-  },
-  {
-    id: 5,
-    name: "Mouse Ergonomico",
-    description: "Precisión, comodidad y rapidez para cuidar tu salud.",
-    image: mouseergo,
-  },
-  {
-    id: 6,
-    name: "PC Gamer",
-    description: "Potencia extrema para los juegos y programas más exigentes.",
-    image: pc2,
-  },
-];
 ---
 
 <div id="products-section">
@@ -73,7 +27,7 @@ const products = [
               <h4>{p.name}</h4>
               <p>{p.description}</p>
             </div>
-            <button class="primary-button">Ver mas</button>
+            <a href={`products/${p.id}`} class="primary-button">Ver mas</a>
           </div>
         </div>
       ))
@@ -124,7 +78,7 @@ const products = [
     background: radial-gradient(circle at top right, #2c2d50e8, #1a1b30e8);
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 0  4px #ffffffa9;
+    box-shadow: 0 0 4px #ffffffa9;
   }
 
   .product-card_body {
