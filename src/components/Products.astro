@@ -1,5 +1,11 @@
 ---
 import pc1 from "../assets/images/modern-gaming-pc-isolated-on-transparent-free-png 2.png";
+import laptop from "../assets/images/laptop.png";
+import teclado from "../assets/images/teclado.png";
+import mouse from "../assets/images/mouse.png";
+import mouseergo from "../assets/images/mouse-ergo.png";
+import pc2 from "../assets/images/pc2.png";
+
 import { Image } from "astro:assets";
 import "swiper/swiper-bundle.css";
 
@@ -12,141 +18,152 @@ const products = [
   },
   {
     id: 2,
-    name: "Laptop Ultra Slim",
+    name: "Laptop Victum",
     description: "Rendimiento y portabilidad en un diseño elegante.",
-    image: pc1,
+    image: laptop,
   },
   {
     id: 3,
-    name: "Teclado Mecánico RGB",
-    description: "Iluminación RGB y switches de alto rendimiento.",
-    image: pc1,
+    name: "Teclado MINTAKA V50",
+    description: "Mecánico con iluminación RGB y switches de alto rendimiento.",
+    image: teclado,
   },
   {
     id: 4,
-    name: "Mouse Gamer Pro",
-    description: "Precisión y velocidad para jugadores competitivos.",
-    image: pc1,
+    name: "Mouse Gamer",
+    description:
+      "REDDRAGON Centrophus RGB de alta precición para juagadores competitivos.",
+    image: mouse,
+  },
+  {
+    id: 5,
+    name: "Mouse Ergonomico",
+    description: "Precisión, comodidad y rapidez para cuidar tu salud.",
+    image: mouseergo,
+  },
+  {
+    id: 6,
+    name: "PC Gamer",
+    description: "Potencia extrema para los juegos y programas más exigentes.",
+    image: pc2,
   },
 ];
 ---
 
 <div id="products-section">
-  <div>
-    <h2 class="products-title">#1 En computadores y componentes</h2>
-    <h3 class="products-subtitle">Diseño / Animación / Ingeniería</h3>
+  <div class="products-header">
+    <h2 class="products-title">Computadores y periféricos para</h2>
+    <h3 class="products-subtitle">Gaming/ Diseño / Animación / Ingeniería</h3>
   </div>
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      {
-        products.map((p) => (
-          <div class="swiper-slide">
-            <div class="product-card">
-              <div class="product-card_body">
-                <div class="product-img">
-                  <Image
-                    class="product_img"
-                    src={p.image}
-                    alt={p.name}
-                    width={300}
-                    height={300}
-                  />
-                </div>
-                <div class="product-card_body_info">
-                  <h4>{p.name}</h4>
-                  <p>{p.description}</p>
-                  <button class="primary-button">Más</button>
-                </div>
-              </div>
+  <div class="products-cards_container">
+    {
+      products.map((p) => (
+        <div class="product-card">
+          <div class="product-card_body">
+            <div class="product-img">
+              <Image
+                class="product_img"
+                src={p.image}
+                alt={p.name}
+                width={250}
+                height={250}
+              />
             </div>
+            <div class="product-card_body_info">
+              <h4>{p.name}</h4>
+              <p>{p.description}</p>
+            </div>
+            <button class="primary-button">Ver mas</button>
           </div>
-        ))
-      }
-    </div>
+        </div>
+      ))
+    }
   </div>
 </div>
 
 <style>
   #products-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.445), rgba(0, 0, 0, 0.445)),
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
       url("../assets/images/pexels-photo-3165335.jpeg");
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100%;
-    padding: 50px 100px 50px 100px;
+    background-size: cover;
+    background-position: center;
+    padding: 80px 20px;
   }
+
+  .products-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
   .products-title {
-    text-align: center;
-    font-size: 1.43rem;
-    color: var(--text-dark);
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-weight: 400;
+    margin-bottom: 12px;
   }
+
   .products-subtitle {
-    text-align: center;
     font-size: 2rem;
-    color: var(--text-dark);
-    margin-bottom: 18px;
+    color: #ffffff;
+    letter-spacing: 1px;
   }
-  .swiper-container {
-    width: 100%;
-    height: 100%;
-    padding: 110px 6px 12px 6px;
-    position: relative;
+
+  .products-cards_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
   .product-card {
-    position: relative;
-    width: 350px;
-    height: 340px;
-    display: flex;
-    align-items: flex-end;
-    border-radius: 12px;
-    padding: 18px;
-    background: radial-gradient(circle at top right, #2c2d50e8, #1a1b30e8);
-    box-shadow: 0 0 6px 1px #fefefe6b;
-  }
-  .product-img {
-    object-fit: contain;
-    top: -100px;
-    position: absolute;
-    display: flex;
-    left: 50%;
-    transform: translateX(-50%);
     width: 100%;
+    background: radial-gradient(circle at top right, #2c2d50e8, #1a1b30e8);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0  4px #ffffffa9;
+  }
+
+  .product-card_body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+  }
+
+  .product-img {
+    height: 250px;
+    width: 250px;
+    display: flex;
     justify-content: center;
     align-items: center;
   }
+
   .product_img {
+    max-width: 100%;
+    height: auto;
     object-fit: contain;
+    filter: drop-shadow(0px 0px 6px #ffffff50);
   }
+
+  .product-card_body_info {
+    text-align: center;
+  }
+
   .product-card_body_info h4 {
-    font-size: 18px;
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .product-card_body_info p {
+    font-size: 1rem;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    line-height: 1.6;
   }
 </style>
-
-<script>
-  import Swiper from "swiper";
-  new Swiper(".swiper-container", {
-    loop: false,
-    slidesPerView: 3,
-    spaceBetween: 20,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 3,
-      },
-    },
-  });
-</script>

@@ -7,24 +7,27 @@ import { Image } from "astro:assets";
 <div id="home">
   <TechIcon class="tech-icon left" />
   <TechIcon class="tech-icon right" />
-  <div class="home-info">
-    <h1 class="title">PCVision</h1>
-    <p class="home-info_eslogan">
-      El poder de la tecnología al alcance de tus manos
-    </p>
-    <p>
-      Equipos de alto rendimiento, periféricos avanzados y soporte confiable.
-      Todo lo que necesitas para crear, jugar y triunfar está aquí. ¡Hazlo
-      posible con PCVision! alcance de tus manos.
-    </p>
+  <div class="home-content">
+    <div class="home-info">
+      <h1 class="title">PCVision</h1>
+      <p class="home-info_eslogan">
+        El poder de la tecnología al alcance de tus manos
+      </p>
+      <p class="home-info_description">
+        Información sobre equipos de alto rendimiento y periféricos avanzados.
+        Todo lo que necesitas para crear, jugar y triunfar está aquí.<br />
+        ¡Hazlo posible con <strong>PCVision</strong>!
+      </p>
+      <a href="#products-section" class="cta-button">Explorar</a>
+    </div>
+    <Image
+      class="home-pc-img"
+      src={pc1}
+      alt="PC Moderno"
+      width={500}
+      height={500}
+    />
   </div>
-  <Image
-    class="home-pc-img"
-    src={pc1}
-    alt="PC Moderno"
-    width={500}
-    height={500}
-  />
 </div>
 <style>
   #home {
@@ -34,31 +37,117 @@ import { Image } from "astro:assets";
     background: radial-gradient(circle at top right, #2c2d50, #1a1b30);
     align-items: center;
     justify-content: center;
-    padding: 50px 0 50px 0;
+    padding: 50px;
+    overflow: hidden;
   }
+
+  .home-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    max-width: 1200px;
+    width: 100%;
+  }
+
   .home-info {
     max-width: 550px;
+    color: #ffffff;
+    z-index: 2;
   }
+
   .home-info_eslogan {
     font-weight: 400;
-    font-size: 18px;
-    margin-bottom: 40px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #a0a0ff;
   }
+
+  .home-info_description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #e0e0e0;
+  }
+
   .title {
-    width: fit-content;
-    display: inline-block;
-    font-size: 3.5rem;
-    color: var(--text-dark);
+    font-size: 4rem;
+    color: #ffffff;
     font-family: "Zen Dots", system-ui;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
   }
+
+  .title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #6a5acd, #a0a0ff);
+    border-radius: 2px;
+    animation: expand .3s ease-in-out;
+  }
+
+  .cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+    background: linear-gradient(90deg, #6a5acd, #a0a0ff);
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(106, 90, 205, 0.5);
+  }
+
+  .home-pc-img {
+    z-index: 1;
+    animation: float 5s ease-in-out infinite;
+  }
+
   .tech-icon.left {
     position: absolute;
     left: -30px;
     top: 70px;
+    opacity: 0.6;
+    animation: float 6s ease-in-out infinite;
   }
+
   .tech-icon.right {
     position: absolute;
     right: 0;
     bottom: 50px;
+    opacity: 0.6;
+    animation: float 5s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes expand {
+    0% {
+      width: 5%;
+    }
+    100% {
+      width: 100%;
+    }
   }
 </style>
